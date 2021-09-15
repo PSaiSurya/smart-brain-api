@@ -8,8 +8,6 @@ const app = new Clarifai.App({
 const apiCall = async (req, res) => {
   try {
     const link = req.body.input.toString();
-    const isURL = link.match(/\.(jpeg|jpg|gif|png|tiff|webp|bmp)$/) != null;
-    if (isURL) {
       const response = await fetch(link);
       const data = await response.headers.get("Content-Type");
       const isImage =
@@ -31,9 +29,6 @@ const apiCall = async (req, res) => {
       } else {
         res.status(400).json("Invalid link. Please try again");
       }
-    } else {
-      res.status(400).json("Invalid link. Please try again");
-    }
   } catch (error) {
     res.status(400).json("Unable to work with API");
   }
