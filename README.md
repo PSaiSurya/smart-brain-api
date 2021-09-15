@@ -1,2 +1,2 @@
 # Smart-Brain-API
- Simple REST API built with express.js
+Javascript REST API for [Smart Brain Application](https://github.com/PSaiSurya/smart-brain) built with express.js
