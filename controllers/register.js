@@ -1,7 +1,7 @@
 const register = async (req, res, database, bcrypt) => {
   const { email, name, password } = req.body;
   if (!email || !name || !password) {
-    return res.status(400).json("Incorrect Form Submission");
+    return res.status(400).json("All fields are required. They cannot be empty");
   }
   const salt = bcrypt.genSaltSync(10);
   const hash = bcrypt.hashSync(password, salt);
